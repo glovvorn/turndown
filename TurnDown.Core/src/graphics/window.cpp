@@ -23,7 +23,7 @@ namespace turndown {
 
 			for (int i = 0; i < MAX_BUTTONS; i++)
 			{
-				m_Buttons[i] = false;
+				m_MouseButtons[i] = false;
 			}
 
 		}
@@ -53,6 +53,7 @@ namespace turndown {
 		{
 			if (!glfwInit())
 			{
+				//TODO(greg): logging
 				std::cout << "Failed to initialize GLFW" << std::endl;
 				return false;
 			}
@@ -60,6 +61,7 @@ namespace turndown {
 			m_Window = glfwCreateWindow(m_Width, m_Height, m_Name, NULL, NULL);
 			if (!m_Window)
 			{
+				//TODO(greg): logging
 				glfwTerminate();
 				std::cout << "Failed to create GLFW window." << std::endl;
 				return false;
@@ -67,10 +69,14 @@ namespace turndown {
 			glfwMakeContextCurrent(m_Window);
 			glfwSetWindowUserPointer(m_Window, this);
 			glfwSetWindowSizeCallback(m_Window, window_resize);
+			glfwSetKeyCallback(m_Window, key_callback);
+			glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
+			glfwSetCursorPosCallback(m_Window, cursor_pos_callback);
 
 			//NOTE(greg): this needs to happen AFTER the GLFW Context is created
 			if (glewInit() != GLEW_OK)
 			{
+				//TODO(greg): logging
 				std::cout << "Failed to initialize GLEW!" << std::endl;
 				return false;
 			}
@@ -80,13 +86,30 @@ namespace turndown {
 			return true;
 		}
 
-		bool Window::isKeyPressed(unsigned int keycode)
+		bool Window::isKeyPressed(unsigned int keycode) const
 		{
 			if (keycode >= MAX_KEYS)
 			{
+				//TODO(greg): logging
 				return false;
 			}
 			return m_Keys[keycode];
+		}
+
+		bool Window::isMouseButtonPressed(unsigned int button) const
+		{
+			if (button >= MAX_KEYS)
+			{
+				//TODO(greg): logging
+				return false;
+			}
+			return m_MouseButtons[button];
+		}
+
+		void Window::getMousePosition(double& x, double& y) const
+		{
+			x = mx;
+			y = my;
 		}
 
 		void window_resize(GLFWwindow *window, int width, int height)
@@ -98,6 +121,19 @@ namespace turndown {
 		{
 			Window *win = (Window *)glfwGetWindowUserPointer(window);
 			win->m_Keys[key] = action != GLFW_RELEASE;
+		}
+
+		void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+		{
+			Window *win = (Window *)glfwGetWindowUserPointer(window);
+			win->m_MouseButtons[button] = action != GLFW_RELEASE;
+		}
+
+		void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)
+		{
+			Window *win = (Window *)glfwGetWindowUserPointer(window);
+			win->mx = xpos;
+			win->my = ypos;
 		}
 	}
 }
