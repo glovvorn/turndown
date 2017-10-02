@@ -1,11 +1,6 @@
-﻿  Vector4.cpp
-  Vector3.cpp
-  Vector2.cpp
+﻿  matrix4.cpp
+c:\src\turndown\turndown\turndown.core\src\maths\maths.h(10): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   main.cpp
+c:\src\turndown\turndown\turndown.core\src\maths\maths.h(10): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-  LINK : C:\src\turndown\turndown\bin\Debug\TurnDown.Core.exe not found or not built by the last incremental link; performing full link
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\src\turndown\turndown\bin\Debug\vc120.pdb'; linking object as if no debug info
-  TurnDown.Core.vcxproj -> C:\src\turndown\turndown\bin\Debug\TurnDown.Core.exe
-  TurnDown.Core.vcxproj -> C:\src\turndown\turndown\bin\Debug\TurnDown.Core.pdb (Partial PDB)
+c:\src\turndown\turndown\turndown.core\src\maths\matrix4.cpp(47): error C4716: 'turndown::maths::matrix4::multiply': must return a value

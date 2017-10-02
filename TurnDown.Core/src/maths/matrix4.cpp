@@ -1,4 +1,5 @@
 #include "matrix4.h"
+#include "vector3.h"
 
 namespace turndown {
 	namespace maths {

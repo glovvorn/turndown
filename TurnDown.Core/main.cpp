@@ -20,6 +20,9 @@ int main()
 	std::cout << b << std::endl;
 	std::cout << c << std::endl;
 
+	matrix4 position = matrix4::translation(Vector3(2, 3, 4));
+	position *= matrix4::identity();
+
 	while (!window.closed())
 	{
 		window.Clear();
