@@ -1,6 +1,3 @@
-﻿  matrix4.cpp
-c:\src\turndown\turndown\turndown.core\src\maths\maths.h(10): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  main.cpp
-c:\src\turndown\turndown\turndown.core\src\maths\maths.h(10): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-c:\src\turndown\turndown\turndown.core\src\maths\matrix4.cpp(47): error C4716: 'turndown::maths::matrix4::multiply': must return a value
+﻿  main.cpp
+  TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.exe
+  TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.pdb (Partial PDB)

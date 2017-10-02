@@ -44,6 +44,8 @@ namespace turndown {
 					elements[x + y*4] = sum;
 				}
 			}
+
+			return *this;
 		}
 
 		matrix4 operator*(matrix4 left, const matrix4& right)

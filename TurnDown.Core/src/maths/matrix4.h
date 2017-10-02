@@ -1,7 +1,5 @@
 #pragma once
 
-#define _USE_MATH_DEFINES
-#include <math.h>
 #include "maths.h"
 
 namespace turndown {
@@ -9,7 +7,11 @@ namespace turndown {
 
 		struct matrix4 
 		{
-			float elements[4 * 4];
+			union
+			{
+				float elements[4 * 4];
+				Vector4 columns[4];
+			};
 
 			matrix4();
 			matrix4(float diagonal);
