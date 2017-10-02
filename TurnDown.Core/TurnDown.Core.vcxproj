@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\graphics\window.cpp" />
+    <ClCompile Include="src\maths\matrix4.cpp" />
     <ClCompile Include="src\maths\Vector2.cpp" />
     <ClCompile Include="src\maths\Vector3.cpp" />
     <ClCompile Include="src\maths\Vector4.cpp" />
@@ -129,6 +130,7 @@
   <ItemGroup>
     <ClInclude Include="src\graphics\window.h" />
     <ClInclude Include="src\maths\maths.h" />
+    <ClInclude Include="src\maths\matrix4.h" />
     <ClInclude Include="src\maths\vector2.h" />
     <ClInclude Include="src\maths\vector3.h" />
     <ClInclude Include="src\maths\vector4.h" />
