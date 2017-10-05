@@ -1,3 +1,5 @@
-﻿  main.cpp
+﻿  shader.cpp
+  main.cpp
+  Generating Code...
   TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.exe
   TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.pdb (Partial PDB)
