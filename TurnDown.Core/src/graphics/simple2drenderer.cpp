@@ -3,7 +3,7 @@
 namespace turndown {
 	namespace graphics {
 
-		void Simple2DRenderer::submit(const Renderable2D& renderable)
+		void Simple2DRenderer::submit(const Renderable2D* renderable)
 		{
 			m_RenderQueue.push_back(renderable);
 		}
@@ -11,14 +11,17 @@ namespace turndown {
 		{
 			while (!m_RenderQueue.empty())
 			{
-				const Renderable2D& renderable = m_RenderQueue.front();
-				renderable.getVAO()->bind();
-				renderable.getIBO()->bind();
+				const Renderable2D* renderable = m_RenderQueue.front();
+				renderable->getVAO()->bind();
+				renderable->getIBO()->bind();
 
-				glDrawElements(GL_TRIANGLES, renderable.getIBO->getCount(), GL_UNSIGNED_SHORT, nullptr);
+				renderable->getShader().setUniformMat4("ml_matrix", maths::matrix4::translation(renderable->getPosition()));
+				glDrawElements(GL_TRIANGLES, renderable->getIBO()->getCount(), GL_UNSIGNED_SHORT, nullptr);
 
-				renderable.getVAO()->unbind();
-				renderable.getIBO()->unbind();
+				renderable->getVAO()->unbind();
+				renderable->getIBO()->unbind();
+
+				m_RenderQueue.pop_front();
 			}
 		}
 

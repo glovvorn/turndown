@@ -20,7 +20,7 @@ namespace turndown {
 			VertexArray* m_VertexArray;
 			IndexBuffer* m_IndexBuffer;
 			Shader& m_Shader;
-		protected:
+		public:
 			Renderable2D(maths::Vector3 position, maths::Vector2 size, maths::Vector4 color, Shader& shader)
 				: m_Position(position), m_Size(size), m_Color(color), m_Shader(shader)
 			{
@@ -54,7 +54,6 @@ namespace turndown {
 				delete m_IndexBuffer;
 			}
 			
-		public:
 			inline const VertexArray* getVAO() const { return m_VertexArray; }
 			inline const IndexBuffer* getIBO() const { return m_IndexBuffer; }
 
