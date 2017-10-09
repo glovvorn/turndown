@@ -1,3 +1,10 @@
-﻿  main.cpp
+﻿  simple2drenderer.cpp
+  Generating Code...
+  Compiling...
+  main.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\src\TurnDown\TurnDown\bin\Debug\vc120.pdb'; linking object as if no debug info
   TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.exe
   TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.pdb (Partial PDB)

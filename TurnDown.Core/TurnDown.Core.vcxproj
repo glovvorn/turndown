@@ -121,11 +121,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\graphics\BatchRenderer2d.cpp" />
     <ClCompile Include="src\graphics\buffers\buffer.cpp" />
     <ClCompile Include="src\graphics\buffers\indexbuffer.cpp" />
     <ClCompile Include="src\graphics\buffers\vertexarray.cpp" />
     <ClCompile Include="src\graphics\simple2drenderer.cpp" />
     <ClCompile Include="src\graphics\shader.cpp" />
+    <ClCompile Include="src\graphics\Sprite.cpp" />
+    <ClCompile Include="src\graphics\StaticSprite.cpp" />
     <ClCompile Include="src\graphics\window.cpp" />
     <ClCompile Include="src\maths\matrix4.cpp" />
     <ClCompile Include="src\maths\Vector2.cpp" />
@@ -133,6 +136,7 @@
     <ClCompile Include="src\maths\Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\graphics\BatchRenderer2d.h" />
     <ClInclude Include="src\graphics\buffers\buffer.h" />
     <ClInclude Include="src\graphics\buffers\indexbuffer.h" />
     <ClInclude Include="src\graphics\buffers\vertexarray.h" />
@@ -140,6 +144,8 @@
     <ClInclude Include="src\graphics\Renderer2d.h" />
     <ClInclude Include="src\graphics\shader.h" />
     <ClInclude Include="src\graphics\simple2drenderer.h" />
+    <ClInclude Include="src\graphics\Sprite.h" />
+    <ClInclude Include="src\graphics\StaticSprite.h" />
     <ClInclude Include="src\graphics\window.h" />
     <ClInclude Include="src\maths\maths.h" />
     <ClInclude Include="src\maths\maths_func.h" />

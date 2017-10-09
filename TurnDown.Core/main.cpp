@@ -11,6 +11,8 @@
 #include "src/graphics/Renderer2d.h"
 #include "src/graphics/simple2drenderer.h"
 
+#include "src/graphics/StaticSprite.h"
+
 int main()
 {
 	using namespace turndown;
@@ -27,8 +29,8 @@ int main()
 	shader.setUniformMat4("pr_matrix", ortho);
 	shader.setUniformMat4("ml_matrix", matrix4::translation(Vector3(4, 3, 0)));
 
-	Renderable2D sprite(maths::Vector3(5, 5, 0), maths::Vector2(4, 4), maths::Vector4(1, 0, 1, 1), shader);
-	Renderable2D sprite2(maths::Vector3(7, 1, 0), maths::Vector2(2, 3), maths::Vector4(0.2f, 0, 1, 1), shader);
+	StaticSprite sprite(5, 5, 4, 4, maths::Vector4(1, 0, 1, 1), shader);
+	StaticSprite sprite2(7, 1, 2, 3, maths::Vector4(0.2f, 0, 1, 1), shader);
 	Simple2DRenderer renderer;
 
 	shader.setUniform2f("light_pos", Vector2(8.0f, 4.5f));
