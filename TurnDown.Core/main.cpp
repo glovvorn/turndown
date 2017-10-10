@@ -44,7 +44,7 @@ int main()
 	{
 		for (float x = 0; x < 16.0f; x+= 0.05f)
 		{
-			sprites.push_back(new Sprite(x, y, 0.049f, 0.049f, maths::Vector4(rand() % 1000 / 1000.0f, 1, 1, 1)));
+			sprites.push_back(new Sprite(x, y, 0.04f, 0.04f, maths::Vector4(rand() % 1000 / 1000.0f, 1, 1, 1)));
 		}
 	}
 
@@ -64,9 +64,9 @@ int main()
 		{
 			renderer.submit(sprites[i]);
 		}
+
 		renderer.end();
 		renderer.flush();
-		printf("sprites: %d\n", sprites.size());
 		window.Update();
 	}
 
