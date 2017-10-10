@@ -29,7 +29,7 @@ namespace turndown {
 			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-			GLushort indicies[RENDERER_INDICIES_SIZE];
+			GLuint *indicies = new GLuint[RENDERER_INDICIES_SIZE];
 
 			int offset = 0;
 			for (int i = 0; i < RENDERER_INDICIES_SIZE; i+= 6)
@@ -77,16 +77,27 @@ namespace turndown {
 			m_Buffer->vertex = maths::Vector3(position.x + size.x, position.y, position.z);
 			m_Buffer->color = color;
 			m_Buffer++;
+
+			m_indexCount += 6;
 		}
 
 		void BatchRenderer2d::end()
 		{
 			glUnmapBuffer(GL_ARRAY_BUFFER);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 
 		void BatchRenderer2d::flush()
 		{
+			glBindVertexArray(m_VAO);
+			m_IBO->bind();
 
+			glDrawElements(GL_TRIANGLES, m_indexCount, GL_UNSIGNED_INT, NULL);
+
+			m_IBO->unbind();
+			glBindVertexArray(0);
+
+			m_indexCount = 0;
 		}
 
 	}
