@@ -1,0 +1,27 @@
+﻿  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  C:\src\TurnDown\TurnDown\Dependencies\GLFW\include\GLFW\glfw3.h(98): note: see previous definition of 'APIENTRY'
+main.cpp(38): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.cpp(68): warning C4018: '<': signed/unsigned mismatch
+  BatchRenderer2d.cpp
+  buffer.cpp
+  indexbuffer.cpp
+  vertexarray.cpp
+src\graphics\buffers\vertexarray.cpp(13): warning C4018: '<': signed/unsigned mismatch
+  simple2drenderer.cpp
+  shader.cpp
+  Sprite.cpp
+  StaticSprite.cpp
+  window.cpp
+  matrix4.cpp
+  Vector2.cpp
+  Vector3.cpp
+  Vector4.cpp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  269 of 269 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\src\TurnDown\TurnDown\bin\Release\vc120.pdb'; linking object as if no debug info
+  TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Release\TurnDown.Core.exe

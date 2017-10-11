@@ -4,16 +4,17 @@
 #include "src/maths/maths.h"
 #include "src/utils/fileutils.h"
 
-#include "src/graphics/buffers/buffer.h"
-#include "src/graphics/buffers/indexbuffer.h"
-#include "src/graphics/buffers/vertexarray.h"
+//#include "src/graphics/buffers/buffer.h"
+//#include "src/graphics/buffers/indexbuffer.h"
+//#include "src/graphics/buffers/vertexarray.h"
 
-#include "src/graphics/Renderer2d.h"
-#include "src/graphics/simple2drenderer.h"
+//#include "src/graphics/Renderer2d.h"
+//#include "src/graphics/simple2drenderer.h"
 #include "src/graphics/BatchRenderer2d.h"
 
 #include "src/graphics/Sprite.h"
 #include "src/graphics/StaticSprite.h"
+#include "src/utils/timer.h"
 
 #include <time.h>
 
@@ -51,6 +52,10 @@ int main()
 	shader.setUniform2f("light_pos", Vector2(8.0f, 4.5f));
 	shader.setUniform4f("colour", Vector4(0.2f, 0.3f, 0.8f, 1.0f));
 
+	Timer timer;
+	float time = 0;
+	unsigned int frames = 0;
+
 	while (!window.closed())
 	{
 		window.Clear();
@@ -68,6 +73,15 @@ int main()
 		renderer.end();
 		renderer.flush();
 		window.Update();
+		
+		frames++;
+		if (timer.elapsed() - time > 1.0f)
+		{
+			time += 1.0f;
+			printf("%d fps\n", frames);
+			frames = 0;
+		}
+		//printf("%f ms\n", timer.elapsed() * 1000.0f);
 	}
 
 	return 0;

@@ -1,5 +1,7 @@
 ﻿  main.cpp
-c:\src\turndown\turndown\turndown.core\main.cpp(37): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\src\turndown\turndown\turndown.core\main.cpp(63): warning C4018: '<': signed/unsigned mismatch
+c:\program files (x86)\windows kits\10\include\10.0.15063.0\shared\minwindef.h(130): warning C4005: 'APIENTRY': macro redefinition
+  c:\src\turndown\turndown\dependencies\glfw\include\glfw\glfw3.h(98): note: see previous definition of 'APIENTRY'
+c:\src\turndown\turndown\turndown.core\main.cpp(38): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\src\turndown\turndown\turndown.core\main.cpp(68): warning C4018: '<': signed/unsigned mismatch
   TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.exe
   TurnDown.Core.vcxproj -> C:\src\TurnDown\TurnDown\bin\Debug\TurnDown.Core.pdb (Partial PDB)
