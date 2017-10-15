@@ -2,6 +2,7 @@
 
 #include "Renderer2d.h"
 #include "buffers\vertexarray.h"
+#include <cstddef>
 
 namespace turndown {
 	namespace graphics {
@@ -26,9 +27,9 @@ namespace turndown {
 		public:
 			BatchRenderer2d();
 			~BatchRenderer2d();
-			void begin();
+			void begin() override;
 			void submit(const Renderable2D* renderable) override;
-			void end();
+			void end() override;
 			void flush() override;
 		private:
 			void init();

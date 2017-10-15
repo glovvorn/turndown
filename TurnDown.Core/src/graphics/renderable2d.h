@@ -13,7 +13,8 @@ namespace turndown {
 		struct VertexData
 		{
 			maths::Vector3 vertex;
-			maths::Vector4 color;
+			//maths::Vector4 color;
+			unsigned int color;
 		};
 
 		class Renderable2D
