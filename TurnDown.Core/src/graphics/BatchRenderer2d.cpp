@@ -69,19 +69,19 @@ namespace turndown {
 
 			unsigned int c = a << 24 | b << 16 | g << 8 | r << 0;
 
-			m_Buffer->vertex = position;
+			m_Buffer->vertex = *m_TransformationBack * position;
 			m_Buffer->color = c;
 			m_Buffer++;
 
-			m_Buffer->vertex = maths::Vector3(position.x, position.y + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * maths::Vector3(position.x, position.y + size.y, position.z);
 			m_Buffer->color = c;
 			m_Buffer++;
 
-			m_Buffer->vertex = maths::Vector3(position.x + size.x, position.y + size.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * maths::Vector3(position.x + size.x, position.y + size.y, position.z);
 			m_Buffer->color = c;
 			m_Buffer++;
 
-			m_Buffer->vertex = maths::Vector3(position.x + size.x, position.y, position.z);
+			m_Buffer->vertex = *m_TransformationBack * maths::Vector3(position.x + size.x, position.y, position.z);
 			m_Buffer->color = c;
 			m_Buffer++;
 

@@ -3,6 +3,7 @@
 #include "Renderer2d.h"
 #include "buffers\vertexarray.h"
 #include <cstddef>
+#include "renderable2d.h"
 
 namespace turndown {
 	namespace graphics {

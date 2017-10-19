@@ -16,9 +16,13 @@
 #include "src/graphics/StaticSprite.h"
 #include "src/utils/timer.h"
 
+#include "src/graphics/layers/Group.h"
+
 #include "src/graphics/layers/TileLayer.h"
 
 #include <time.h>
+
+#define TEST_50K_SPRITES 0
 
 int main()
 {
@@ -43,6 +47,7 @@ int main()
 	
 	TileLayer layer(&shader);
 	
+#if TEST_50K_SPRITES
 	for (float y = -9.0f; y < 9.0f; y += 0.1f)
 	{
 		for (float x = -16.0f; x < 16.0f; x += 0.1f)
@@ -50,7 +55,20 @@ int main()
 			layer.add(new Sprite(x, y, 0.08f, 0.08f, maths::Vector4(rand() % 1000 / 1000.0f, 1.0f, 1.0f, 1.0f)));
 		}
 	}
-	
+#else
+
+	Group* group = new Group(matrix4::translation(Vector3(-15.0f, 5.0f, 0.0f)));
+	group->add(new Sprite(0, 0, 6, 3, maths::Vector4(1, 1, 1, 1)));
+
+	Group* button = new Group(matrix4::translation(Vector3(.5f, 0.5f, 0)));
+	button->add(new Sprite(0, 0, 5.0f, 2.0f, Vector4(1, 0, 1, 1)));
+	button->add(new Sprite(0.5f, 0.5f, 5.0f, 2.0f, Vector4(0.2f, 0.3f, 0.8f, 1)));
+
+	group->add(button);
+	layer.add(group);
+
+#endif
+
 	TileLayer layer2(&shader2);
 	layer2.add(new Sprite(-2, -2, 4, 4, maths::Vector4(0, 0, 1, 1.0f)));
 
@@ -70,7 +88,7 @@ int main()
 		shader2.setUniform2f("light_pos", Vector2((float)(x * 32.0f / (float)window.getWidth() - 16.0f), (float)(9.0f - y * 18.0f / (float)window.getHeight())));
 		
 		layer.render();
-		layer2.render();
+		//layer2.render();
 
 		window.Update();
 		
